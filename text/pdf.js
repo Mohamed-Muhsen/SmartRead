@@ -6,7 +6,6 @@ const rateInput = document.getElementById("rate");
 const pitchInput = document.getElementById("pitch");
 const volumeInput = document.getElementById("volume");
 
-// تحميل النص من PDF
 pdfInput.addEventListener("change", async (event) => {
     const file = event.target.files[0];
     if (!file || file.type !== "application/pdf") {
@@ -38,20 +37,17 @@ pdfInput.addEventListener("change", async (event) => {
     fileReader.readAsArrayBuffer(file);
 });
 
-// قراءة النص باستخدام Speech Synthesis مع التحكم في Rate, Pitch, Volume
 readTextBtn.addEventListener("click", () => {
     const textValue = pdfText.value;
  
 
     const utterance = new SpeechSynthesisUtterance(textValue);
 
-    // إعدادات التحكم
     utterance.rate = parseFloat(rateInput.value);
     utterance.pitch = parseFloat(pitchInput.value);
     utterance.volume = parseFloat(volumeInput.value);
 
-    // تحديد اللغة بناءً على النص
-    const isArabic = /[\u0600-\u06FF]/.test(textValue); // تحقق من وجود اللغة العربية
+    const isArabic = /[\u0600-\u06FF]/.test(textValue);
     utterance.lang = isArabic ? "ar-SA" : "en-US";
 
     window.speechSynthesis.speak(utterance);
@@ -67,17 +63,15 @@ pdfInput.addEventListener("change", (event) => {
     const file = event.target.files[0];
     
     if (file && file.type === "application/pdf") {
-        // تغيير الرسالة عند نجاح الرفع
         uploadMessage.textContent = "Upload successful!";
-        uploadMessage.style.color = "green"; // تغيير لون النص للأخضر
+        uploadMessage.style.color = "green"; 
     } else {
-        // إذا لم يكن الملف PDF
         uploadMessage.textContent = "Please upload a valid PDF file.";
-        uploadMessage.style.color = "red"; // تغيير لون النص للأحمر
+        uploadMessage.style.color = "red";
     }
 });
 
-let currentLanguage = 'en';  // تحديد اللغة الافتراضية
+let currentLanguage = 'en';
 
 function showPopup() {
     const errorModal = document.getElementById("errorModal");
