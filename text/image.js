@@ -6,7 +6,6 @@ const rateInput = document.getElementById("rate");
 const pitchInput = document.getElementById("pitch");
 const volumeInput = document.getElementById("volume");
 
-// تحميل النص من صورة باستخدام Tesseract.js
 imageInput.addEventListener("change", async (event) => {
     const file = event.target.files[0];
     if (!file || !file.type.startsWith("image/")) {
@@ -25,8 +24,8 @@ imageInput.addEventListener("change", async (event) => {
             {
                 logger: (m) => console.log(m),
                 tessedit_char_whitelist: 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', 
-                tessedit_pageseg_mode: Tesseract.PSM.SINGLE_BLOCK, //بنقسم الصفحه لبلوكايه واحده
-                preserve_interword_spaces: true // بنحافظ علي المسافات بين الكلام
+                tessedit_pageseg_mode: Tesseract.PSM.SINGLE_BLOCK, 
+                preserve_interword_spaces: true 
             }
         );
         const extractedText = result.data.text.trim();
@@ -34,15 +33,13 @@ imageInput.addEventListener("change", async (event) => {
         uploadMessage.textContent = "Upload successful!";
         uploadMessage.style.color = "green";
 
-        // تحديد اللغة بناءً على النص
-        const isArabic = /[\u0600-\u06FF]/.test(extractedText); // تحقق من وجود النص العربي
-        const language = isArabic ? "ar-SA" : "en-US"; // تحديد اللغة
+        const isArabic = /[\u0600-\u06FF]/.test(extractedText); 
+        const language = isArabic ? "ar-SA" : "en-US"; 
         console.log(`Detected Language: ${language}`);
 
-        // يمكنك استخدام اللغة المحددة عند تحويل النص إلى كلام
         readTextBtn.addEventListener("click", () => {
             const utterance = new SpeechSynthesisUtterance(extractedText);
-            utterance.lang = language; // تعيين اللغة المناسبة
+            utterance.lang = language; 
 
             // إعدادات التحكم
             utterance.rate = parseFloat(rateInput.value);
@@ -64,7 +61,7 @@ function toggleMenu() {
     menuIcons.classList.toggle("show");
 }
 
-let currentLanguage = 'en';  // تحديد اللغة الافتراضية
+let currentLanguage = 'en';  
 
 function showPopup() {
     const errorModal = document.getElementById("errorModal");
@@ -114,6 +111,6 @@ function extractTextFromImage(imageFile) {
 }
 
 function toggleLanguage() {
-    currentLanguage = (currentLanguage === 'en') ? 'ar' : 'en';  // تبديل اللغة
+    currentLanguage = (currentLanguage === 'en') ? 'ar' : 'en';  
     showPopup();  
 }
