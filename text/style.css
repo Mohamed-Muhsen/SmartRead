@@ -1,0 +1,455 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #FFF2D7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.container{
+   background: #fff6eac8;
+   color: #D8AE7E;
+   border-radius: 12px;
+   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+   padding: 30px;
+   width: 90%;
+   max-width: 600px;
+   text-align: center;
+   overflow: hidden;
+   position: relative;
+   z-index: 555;
+}
+
+h1{
+    color: #D8AE7E;
+    margin-bottom: 15px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+textarea, select, input[type="number"], button{
+    width: calc(100% - 20px);
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+textarea{
+    height: 110px;
+    resize: vertical;
+    background-color: #fff;
+    resize: none;
+}
+
+select, input[type="number"]{
+    background-color: #fff;
+    color: #333;
+}
+
+.slider-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.slider-label{
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.slider{
+    width: 100%;
+    -webkit-appearance: none;
+    background-color: #ddd;
+    height: 8px;
+    border-radius: 5px;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.slider:hover{
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    background: #D8AE7E;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+button{
+    background-color: #D8AE7E;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 12px;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+button:hover{
+    background-color: #F8C794;
+}
+
+label{
+    display: block;
+    margin: 10px 5px;
+    font-weight: bold;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+    color: #c00;
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    position: relative;
+
+}
+
+.modal-content p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.close-btn {
+    background-color: #D8AE7E;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.close-btn:hover {
+    background-color: #F8C794;
+}
+
+.hidden {
+    display: none;
+}
+
+.icon-buttons #menu-icons{
+    position: absolute;
+    top: 70px;
+    right: 343px;
+}
+
+.icon-buttons #menu-icons button{
+    background-color: #D8AE7E;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 10px 0;
+    border-radius: 8px 8px 8px 0;
+    transition: background-color 0.2s;
+}
+
+.icon-buttons button i{
+    font-size: 20px;
+}
+
+
+.language-icon {
+    position: absolute;
+    
+    cursor: pointer;
+    font-size: 25px;
+    color: #D8AE7E;
+    transition: color 0.3s;
+    z-index: 10; 
+}
+
+.language-icon:hover {
+    color: #F8C794;
+}
+#menu-toggle {
+    display: none;
+}
+
+
+@media (max-width: 1081px) {
+    body {
+        font-size: 14px; /* تقليل حجم النصوص قليلاً */
+        padding: 0 ;
+        margin:  0 ;
+        overflow-y: scroll;        
+    }
+
+    .container {
+        padding: 25px;
+        width: 90%;
+        max-width: 90%;
+        position: relative;
+    }
+
+    .icon-buttons {
+        position: absolute;
+        right:0px;
+        top: 30px;
+        z-index: 55555;
+      }
+    .icon-buttons  #menu-icons {
+        font-size: 14px;
+        padding: 5px 0;
+    }
+
+    .language-icon {
+        font-size: 24px;
+    }
+
+    .modal-content {
+        width: 80%;
+    }
+
+    .slider {
+        width: 85%;
+    }
+
+    #menu-toggle {
+        display: inline-block;
+        padding:  8px 40px 8px 15px;
+        z-index: 10000;
+        
+    }
+
+    #menu-icons {
+        display: none; 
+    }
+
+
+    #menu-icons.show  {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        position: relative;
+        top: 0px;
+        right: 0px;
+        z-index: 55555;
+    }
+    .splash-screen {
+        text-align: center;
+    }
+
+    .icons-container {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .splash-text {
+        margin-top: 10px;
+    }
+
+    .splash-text span {
+        display: block;
+        margin: 5px 0;
+        font-size: 12px; /* تقليل حجم النص */
+    }
+}
+
+
+/* إخفاء المدخل الأصلي */
+input[type="file"] {
+    display: none;
+}
+
+/* تصميم زر رفع الملف */
+label[for="pdfInput"] {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #D8AE7E;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* تأثير عند التمرير بالماوس */
+label[for="pdfInput"]:hover {
+    background-color: #F8C794;
+    transform: scale(1.05);
+}
+
+/* تأثير عند النقر */
+label[for="pdfInput"]:active {
+    background-color: #D8AE7E;
+    transform: scale(0.95);
+}
+
+/* نص الإرشادات تحت الزر */
+.upload-instructions {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #888;
+    text-align: center;
+    font-style: italic;
+}
+
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #ffd5a57b, #f7c998);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    z-index: 9999;
+}
+
+.splash-text {
+    display: block;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 0px;
+    animation: moveText 3s infinite alternate;
+}
+
+.splash-text span {
+    margin: 0 55px;
+    font-size: 25px;
+    color: #333;
+}
+
+@keyframes moveText {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Styles for the circular icons container */
+.icons-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    background-color: #f3f3f3;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    animation: rotateIcons 5s infinite linear; /* Add rotation animation */
+}
+
+@keyframes rotateIcons {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+#ico4 {
+    position: absolute;
+    left: -35px;
+}
+#ico2 {
+    position: absolute;
+    top: -40px;
+}
+#ico1 {
+    position: absolute;
+    bottom: -45px;
+}
+#ico3 {
+    position: absolute;
+    right: -50px;
+}
+
+.icons-container i {
+    font-size: 30px;
+    color: #333; /* Set icon color */
+    margin: 10px; /* Space out the icons */
+}
+
+.hiddenn {
+    display: none;
+}
+
+#name1{
+    position: absolute;
+    top: 0px;
+    left: 100px;
+}
+#name2{
+    position: absolute;
+    top: 0;
+    right:  70px;
+}
+#name3{
+    position: absolute;
+    left: 100px;
+    bottom: 100px;
+}
+#name4{
+    position: absolute;
+    bottom: 100px;
+    right: 100px;
+}
+#name5{
+    position: absolute;
+    top: 100px;
+    left: -95px;
+}
+
+#name0{
+    position: absolute;
+    bottom:  200px;
+    left: -95px ;
+    font-weight: bold;
+    font-size: 35px;
+}

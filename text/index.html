@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Text To Speech</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>Text to Speech</h1>
+        <textarea id="text" placeholder="Type your text"></textarea>
+        <label for="voiceSelect">Select Voice</label>
+        <Select id="voiceSelect"></Select>
+
+        <label for="rate">Rate</label>
+        <input type="number" id="rate" min="0.1" max="10" step="0.1" value="1">
+
+        <label for="pitch">Pitch</label>
+        <input type="number" id="pitch" min="0" max="2" step="0.1" value="1">
+
+        <label for="volume" class="slider-label">Volume</label>
+        <div class="slider-container">
+            <input type="range" id="volume" class="slider" min="0" max="1" step="0.1" value="1">
+        </div>
+        <button type="button" onclick="speak()">Speak</button>
+
+        <div id="errorModal" class="modal hidden">
+            <div class="modal-content">
+                <div class="language-icon" onclick="toggleLanguage()">
+                    <i class="fas fa-language"></i>
+                </div>
+
+                <h2 id="modalTitle">⚠️Input Error⚠️</h2>
+                <p id="modalText"></p>
+                <button class="close-btn" onclick="closePopup()">Okay</button>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="icon-buttons">
+        <button id="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div id="menu-icons">
+            <a href="index.html">
+                <button class="icon-btn">
+                    <i class="fas fa-volume-up" id="icon-btn3"></i>
+                </button>
+            </a>
+            <a href="speechtotext.html">
+                <button class="icon-btn">
+                    <i class="fas fa-microphone-alt" id="icon-btn2"></i>
+                </button>
+            </a>
+            <a href="pdf.html">
+                <button class="icon-btn">
+                    <i class="fas fa-file-pdf" id="icon-btn1"></i>
+                </button>
+            </a>
+            <a href="image.html">
+                <button class="icon-btn">
+                    <i class="fas fa-image" id="icon-btn4"></i>
+                </button>
+            </a>
+        </div>
+    </div>
+
+
+    <div class="splash-screen" id="splashScreen">
+        <dsiv class="icons-container">
+            <i class="fas fa-file-pdf" id="ico1"></i>
+            <i class="fas fa-image" id="ico2"></i>
+            <i class="fas fa-volume-up" id="ico3"></i>
+            <i class="fas fa-microphone-alt" id="ico4"></i>
+
+        </dsiv>
+        <div class="splash-text">
+            <span id="name0">SmartRead</span>
+            <span id="name1"></span>
+            <span id="name2"></span>
+            <span id="name3"></span>
+            <span id="name4"></span>
+            <span id="name5">Mohamed Mohsen</span>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

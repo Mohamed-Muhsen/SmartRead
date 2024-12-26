@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="speech.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>Speech to Text</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Speech to Text</h1>
+        <div class="options">
+            <div class="anguage">
+                <p class="lab">Language</p>
+                <select name="input-language" id="language"></select>
+            </div>
+        </div>
+        <div class="line"></div>
+        <button class="btn record">
+            <div class="icon">
+                <ion-icon name="mic-outline"></ion-icon>
+                <img src="bars.svg" alt="" />
+            </div>
+            <p>Start Listening</p>
+        </button>
+
+        <button class="btn confirm" id="confirm" disabled>
+            <ion-icon name="checkmark-outline"></ion-icon>
+            <p>Confirm</p>
+        </button>
+
+        <h3 class="lab">Result :</h3>
+        <div class="result" spellcheck="false" placeholder="Text will be shown here">
+            <p class="interim"></p>
+        </div>
+        <div class="buttons">
+            <button class="btn clear">
+                <ion-icon name="trash-outline"></ion-icon>
+                <p>Clear</p>
+            </button>
+            <button class="btn download" disabled>
+                <ion-icon name="cloud-download-outline"></ion-icon>
+                <p>Download</p>
+            </button>
+        </div>
+    </div>
+    <div class="icon-buttons">
+        <!-- زر منيو -->
+        <button id="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+        <!-- الأيقونات المخفية في البداية -->
+        <div id="menu-icons">
+            <a href="index.html">
+                <button class="icon-btn">
+                    <i class="fas fa-volume-up" id="icon-btn3"></i>
+                </button>
+            </a>
+            <a href="speechtotext.html">
+                <button class="icon-btn">
+                    <i class="fas fa-microphone-alt" id="icon-btn2"></i>
+                </button>
+            </a>
+            <a href="pdf.html">
+                <button class="icon-btn">
+                    <i class="fas fa-file-pdf" id="icon-btn1"></i>
+                </button>
+            </a>
+            <a href="image.html">
+                <button class="icon-btn">
+                    <i class="fas fa-image" id="icon-btn4"></i>
+                </button>
+            </a>
+        </div>
+    </div>
+
+    <!-- IONICONS -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- LANGUAGES -->
+    <script src="language.js"></script>
+
+    <!-- SCRIPT -->
+    <script src="speechtotext.js"></script>
+</body>
+
+</html>
