@@ -210,7 +210,7 @@ label{
 
 @media (max-width: 1081px) {
     body {
-        font-size: 14px; /* تقليل حجم النصوص قليلاً */
+        font-size: 14px;
         padding: 0 ;
         margin:  0 ;
         overflow-y: scroll;        
@@ -285,17 +285,15 @@ label{
     .splash-text span {
         display: block;
         margin: 5px 0;
-        font-size: 12px; /* تقليل حجم النص */
+        font-size: 12px;
     }
 }
 
 
-/* إخفاء المدخل الأصلي */
 input[type="file"] {
     display: none;
 }
 
-/* تصميم زر رفع الملف */
 label[for="pdfInput"] {
     display: inline-block;
     padding: 12px 20px;
@@ -310,19 +308,16 @@ label[for="pdfInput"] {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* تأثير عند التمرير بالماوس */
 label[for="pdfInput"]:hover {
     background-color: #F8C794;
     transform: scale(1.05);
 }
 
-/* تأثير عند النقر */
 label[for="pdfInput"]:active {
     background-color: #D8AE7E;
     transform: scale(0.95);
 }
 
-/* نص الإرشادات تحت الزر */
 .upload-instructions {
     margin-top: 10px;
     font-size: 14px;
